@@ -1,0 +1,54 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "pwa-chrome",
+			"request": "launch",
+			"name": "Launch Chrome",
+			"url": "http://localhost:5000",
+			"webRoot": "${workspaceFolder}/client"
+		},
+		{
+			"name": "Development Backend",
+			"cwd": "${workspaceFolder}/server",
+			"outFiles": ["${workspaceFolder}/server/dist/**/*.js", "!**/node_modules/**"],
+			"restart": true,
+			"request": "launch",
+			"type": "pwa-node",
+			"runtimeExecutable": "nodemon",
+			"runtimeArgs": ["--inspect-brk", "./dist/src/app.js"]
+		},
+		{
+			"name": "TSC Compiler Server",
+			"command": "yarn debug",
+			"cwd": "${workspaceFolder}/server",
+			"request": "launch",
+			"type": "node-terminal"
+		},
+		{
+			"name": "Start Webpack",
+			"console": "integratedTerminal",
+			"program": "${workspaceFolder}/client/scripts/debug.js",
+			"request": "launch",
+			"runtimeExecutable": "node",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "pwa-node"
+		}
+	],
+	"compounds": [
+		{
+			"name": "start chrome debug session",
+			"configurations": [
+				"Launch Chrome",
+				"TSC Compiler Server",
+				"Development Backend",
+				"Start Webpack"
+			],
+			//	"preLaunchTask": "start Webpack",
+			"stopAll": true
+		}
+	]
+}

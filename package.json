@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "preact-emotion": "^9.2.12"
+  }
+}

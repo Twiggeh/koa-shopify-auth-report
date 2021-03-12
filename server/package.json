@@ -1,0 +1,26 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"main": "app.js",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"debug": "node ./scripts/debug.js"
+	},
+	"dependencies": {
+		"@shopify/koa-shopify-auth": "^4.0.2",
+		"@types/": "shopify/koa-shopify-auth",
+		"@types/koa-router": "^7.4.1",
+		"@types/koa-send": "^4.1.2",
+		"@types/node": "^14.14.33",
+		"dotenv": "^8.2.0",
+		"global": "^4.4.0",
+		"koa": "^2.13.1",
+		"koa-router": "^10.0.0",
+		"koa-send": "^5.0.1",
+		"ngrok": "^3.4.0"
+	},
+	"devDependencies": {
+		"@types/koa": "^2.13.1"
+	}
+}
